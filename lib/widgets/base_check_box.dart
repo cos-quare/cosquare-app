@@ -10,16 +10,23 @@ class _BaseCheckBoxState extends State<BaseCheckBox> {
 
   @override
   Widget build(BuildContext context) {
-    return Theme(
-        data: ThemeData(unselectedWidgetColor: const Color(0xff333333)),
-        child: Checkbox(
-            value: isChecked,
-            checkColor: Colors.white,
-            activeColor: const Color(0xff8D3CF6),
-            onChanged: (value) {
-              setState(() {
-                isChecked = value;
-              });
-            }));
+    return Container(
+      decoration: BoxDecoration(
+          color: const Color(0xff242424),
+          border: Border.all(width: 1, color: const Color(0xff333333)),
+          borderRadius: BorderRadius.circular(2.0)),
+      child: SizedBox(
+          width: 16,
+          height: 16,
+          child: Checkbox(
+              value: isChecked,
+              checkColor: Colors.white,
+              activeColor: const Color(0xff8D3CF6),
+              onChanged: (value) {
+                setState(() {
+                  isChecked = value;
+                });
+              })),
+    );
   }
 }

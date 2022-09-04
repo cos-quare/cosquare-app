@@ -69,19 +69,23 @@ class _LoginScreenState extends State<LoginScreen> {
                       hintText: '비밀번호',
                     )),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       BaseCheckBox(),
-                      Text('자동로그인',
-                          style: TextStyle(
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w500,
-                            color: const Color(0xfff8f8f8),
-                          ))
+                      Padding(
+                          padding: const EdgeInsets.fromLTRB(8, 0, 0, 0),
+                          child: Text('자동로그인',
+                              style: TextStyle(
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.w500,
+                                color: const Color(0xfff8f8f8),
+                                letterSpacing: -0.32,
+                              )))
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),

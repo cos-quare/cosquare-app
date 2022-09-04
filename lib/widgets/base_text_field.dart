@@ -9,7 +9,7 @@ class BaseTextField extends StatelessWidget {
     return Container(
         decoration: BoxDecoration(
             color: const Color(0xff242424),
-            border: Border.all(color: const Color(0xff333333)),
+            border: Border.all(width: 1, color: const Color(0xff333333)),
             borderRadius: BorderRadius.circular(4.0)),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
