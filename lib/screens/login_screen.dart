@@ -33,6 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             fontSize: 13.0,
                             fontWeight: FontWeight.w400,
                             color: const Color(0xfff8f8f8),
+                            letterSpacing: -0.32,
                           ),
                         ),
                       ),
@@ -41,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     padding:
                         const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
                     child: BaseTextField(
-                      hintText: '이메일 또는 사용자 이름',
+                      hintText: '이메일',
                     )),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 20, 299, 8),
@@ -58,18 +59,19 @@ class _LoginScreenState extends State<LoginScreen> {
                           fontSize: 13.0,
                           fontWeight: FontWeight.w400,
                           color: const Color(0xfff8f8f8),
+                          letterSpacing: -0.32,
                         ),
                       ),
                     ),
                   ),
                 ),
                 Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 0, 0, 20),
+                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 20),
                     child: BaseTextField(
                       hintText: '비밀번호',
                     )),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(16, 0, 0, 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -86,6 +88,70 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+                  child: SizedBox(
+                    width: 328.0,
+                    height: 50.0,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Respond to button press
+                      },
+                      child: const Text(
+                        '로그인',
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w500,
+                          color: const Color(0xfff8f8f8),
+                          letterSpacing: -0.32,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        primary: const Color(0xff8d3cf6),
+                        shape: new RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(4.0),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 0, 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('비밀번호 찾기',
+                          style: TextStyle(
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w500,
+                            color: const Color(0xfff8f8f8),
+                            letterSpacing: -0.32,
+                          )),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        child: SizedBox(
+                          height: 8,
+                          child: VerticalDivider(
+                            width: 24,
+                            color: const Color(0xff6d6d6d),
+                            thickness: 1,
+                          ),
+                        ),
+                      ),
+                      Text('회원가입',
+                          style: TextStyle(
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w500,
+                            color: const Color(0xfff8f8f8),
+                            letterSpacing: -0.32,
+                          ))
+                    ],
+                  ),
+                ),
+                Divider(
+                  color: const Color(0xff333333),
+                  thickness: 1,
+                )
               ],
             ),
           ),
