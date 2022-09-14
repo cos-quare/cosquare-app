@@ -73,6 +73,10 @@ flutter:
   #         weight: 700
   #
   # For details regarding fonts from package dependencies,
+  assets:
+    - assets/images/glogo.png
+    - assets/images/kakaologo.png
+
   fonts:
     - family: Pretendard
       fonts:
