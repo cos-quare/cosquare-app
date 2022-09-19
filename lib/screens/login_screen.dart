@@ -1,3 +1,4 @@
+import 'package:costarica_app/widgets/base_app_bar.dart';
 import 'package:costarica_app/widgets/base_button.dart';
 import 'package:costarica_app/widgets/base_check_box.dart';
 import 'package:costarica_app/widgets/base_text_field.dart';
@@ -12,6 +13,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: BaseAppBar(isBackButton: false, isCloseButton: true),
       body: SafeArea(
         child: Center(
           child: Container(
