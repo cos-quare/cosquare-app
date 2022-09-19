@@ -1,3 +1,4 @@
+import 'package:costarica_app/widgets/base_button.dart';
 import 'package:costarica_app/widgets/base_check_box.dart';
 import 'package:costarica_app/widgets/base_text_field.dart';
 import 'package:flutter/material.dart';
@@ -41,9 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Padding(
                     padding:
                         const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
-                    child: BaseTextField(
-                      hintText: '이메일',
-                    )),
+                    child: BaseTextField(hintText: '이메일', isPassword: false)),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 20, 299, 8),
                   child: Container(
@@ -67,9 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 Padding(
                     padding: const EdgeInsets.fromLTRB(16, 0, 16, 20),
-                    child: BaseTextField(
-                      hintText: '비밀번호',
-                    )),
+                    child: BaseTextField(hintText: '비밀번호', isPassword: true)),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 0, 20),
                   child: Row(
@@ -89,38 +86,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
-                  child: SizedBox(
-                    width: 328.0,
-                    height: 50.0,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // Respond to button press
-                      },
-                      child: const Text(
-                        '로그인',
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w500,
-                          color: const Color(0xfff8f8f8),
-                          letterSpacing: -0.32,
-                        ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        primary: const Color(0xff8d3cf6),
-                        shape: new RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(4.0),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+                    child: BaseButton(width: 328.0, height: 50.0, text: '로그인')),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('비밀번호 찾기',
+                      Text('비밀번호 재설정',
                           style: TextStyle(
                             fontSize: 14.0,
                             fontWeight: FontWeight.w500,
