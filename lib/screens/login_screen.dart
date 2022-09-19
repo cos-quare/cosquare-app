@@ -93,31 +93,47 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('비밀번호 재설정',
-                          style: TextStyle(
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w500,
-                            color: const Color(0xfff8f8f8),
-                            letterSpacing: -0.32,
-                          )),
+                      TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          minimumSize: Size.zero,
+                          padding: EdgeInsets.zero,
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                        child: Text('비밀번호 재설정',
+                            style: TextStyle(
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w500,
+                              color: const Color(0xfff8f8f8),
+                              letterSpacing: -0.32,
+                            )),
+                      ),
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
                         child: SizedBox(
                           height: 8,
                           child: VerticalDivider(
-                            width: 24,
+                            width: 0,
                             color: const Color(0xff6d6d6d),
                             thickness: 1,
                           ),
                         ),
                       ),
-                      Text('회원가입',
-                          style: TextStyle(
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w500,
-                            color: const Color(0xfff8f8f8),
-                            letterSpacing: -0.32,
-                          ))
+                      TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          minimumSize: Size.zero,
+                          padding: EdgeInsets.zero,
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                        child: Text('회원가입',
+                            style: TextStyle(
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w500,
+                              color: const Color(0xfff8f8f8),
+                              letterSpacing: -0.32,
+                            )),
+                      )
                     ],
                   ),
                 ),

@@ -32,6 +32,8 @@ class _BaseButtonState extends State<BaseButton> {
         ),
         style: ElevatedButton.styleFrom(
           primary: const Color(0xff8d3cf6),
+          padding: EdgeInsets.zero,
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(4.0),
           ),
