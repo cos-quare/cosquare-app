@@ -77,6 +77,8 @@ flutter:
     - assets/images/glogo.png
     - assets/images/kakaologo.png
     - assets/images/email.png
+    - assets/icons/close.png
+    - assets/icons/arrow_back.png
     - assets/icons/close_circle.png
 
   fonts:

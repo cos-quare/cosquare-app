@@ -20,15 +20,24 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
 
     if (isBackButton) {
       backButton = IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back_ios));
+        icon: Image.asset(
+          'assets/icons/arrow_back.png',
+          width: 40,
+          height: 40,
+        ),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      );
     }
 
     if (isCloseButton) {
       closeButton = IconButton(
-        icon: const Icon(Icons.close),
+        icon: Image.asset(
+          'assets/icons/close.png',
+          width: 40,
+          height: 40,
+        ),
         onPressed: () {
           Navigator.pop(context);
         },
