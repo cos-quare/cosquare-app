@@ -76,6 +76,7 @@ flutter:
   assets:
     - assets/images/glogo.png
     - assets/images/kakaologo.png
+    - assets/images/email.png
 
   fonts:
     - family: Pretendard
