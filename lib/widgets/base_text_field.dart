@@ -17,12 +17,6 @@ class BaseTextField extends StatelessWidget {
             decoration: InputDecoration(
               border: InputBorder.none,
               hintText: hintText,
-              hintStyle: TextStyle(
-                letterSpacing: -0.32,
-                fontSize: 14.0,
-                fontWeight: FontWeight.w400,
-                color: const Color(0xff565656),
-              ),
             ),
           ),
         ));

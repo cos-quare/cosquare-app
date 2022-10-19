@@ -29,12 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           '이메일 주소',
                           overflow: TextOverflow.visible,
                           textAlign: TextAlign.left,
-                          style: TextStyle(
-                            fontSize: 13.0,
-                            fontWeight: FontWeight.w400,
-                            color: const Color(0xfff8f8f8),
-                            letterSpacing: -0.32,
-                          ),
+                         
                         ),
                       ),
                     )),
@@ -55,12 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         '비밀번호',
                         overflow: TextOverflow.visible,
                         textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontSize: 13.0,
-                          fontWeight: FontWeight.w400,
-                          color: const Color(0xfff8f8f8),
-                          letterSpacing: -0.32,
-                        ),
+                      
                       ),
                     ),
                   ),
@@ -79,12 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Padding(
                           padding: const EdgeInsets.fromLTRB(8, 0, 0, 0),
                           child: Text('자동로그인',
-                              style: TextStyle(
-                                fontSize: 14.0,
-                                fontWeight: FontWeight.w500,
-                                color: const Color(0xfff8f8f8),
-                                letterSpacing: -0.32,
-                              )))
+                             ))
                     ],
                   ),
                 ),
@@ -99,12 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                       child: const Text(
                         '로그인',
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w500,
-                          color: const Color(0xfff8f8f8),
-                          letterSpacing: -0.32,
-                        ),
+                      
                       ),
                       style: ElevatedButton.styleFrom(
                         primary: const Color(0xff8d3cf6),
@@ -121,12 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('비밀번호 찾기',
-                          style: TextStyle(
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w500,
-                            color: const Color(0xfff8f8f8),
-                            letterSpacing: -0.32,
-                          )),
+                        ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                         child: SizedBox(
@@ -139,12 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       Text('회원가입',
-                          style: TextStyle(
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w500,
-                            color: const Color(0xfff8f8f8),
-                            letterSpacing: -0.32,
-                          ))
+                       )
                     ],
                   ),
                 ),
@@ -176,12 +146,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 '카카오로 로그인',
                                 overflow: TextOverflow.visible,
                                 textAlign: TextAlign.left,
-                                style: TextStyle(
-                                  fontSize: 15.0,
-                                  fontWeight: FontWeight.w500,
-                                  color: const Color(0xff101010),
-                                  letterSpacing: -0.32,
-                                ),
+                            
                               )),
                         )
                       ],
@@ -219,12 +184,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 '구글로 로그인',
                                 overflow: TextOverflow.visible,
                                 textAlign: TextAlign.left,
-                                style: TextStyle(
-                                  fontSize: 15.0,
-                                  fontWeight: FontWeight.w500,
-                                  color: const Color(0xff101010),
-                                  letterSpacing: -0.32,
-                                ),
+                                
                               )),
                         )
                       ],
