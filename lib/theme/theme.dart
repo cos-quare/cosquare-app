@@ -8,11 +8,15 @@ ThemeData _buildCosTheme() {
   CustomThemeData customTheme = CustomThemeData(base);
   return base.copyWith(
     scaffoldBackgroundColor: customTheme.buildDarkColorScheme.background, // ISSUE
+    appBarTheme: customTheme.buildCosAppBarTheme,
     colorScheme: customTheme.buildDarkColorScheme,
     textTheme: customTheme.buildCosTextTheme,
     textSelectionTheme: customTheme.buildTextSelectionTheme,
     inputDecorationTheme: customTheme.buildInputDecorationTheme,
     checkboxTheme: customTheme.buildCosCheckBoxTheme,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(minimumSize: MaterialStateProperty.all(Size(Size.infinite.width, 50))),
+    ),
   );
 }
 
@@ -26,7 +30,8 @@ class CustomThemeData {
     return base.textTheme
         .copyWith(
           headline5: baseTextTheme.headline5?.copyWith(
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.w700,
+            fontSize: 24.0,
           ),
           headline6: baseTextTheme.headline6?.copyWith(
             fontSize: 18.0,
@@ -47,6 +52,13 @@ class CustomThemeData {
           displayColor: kCosTextActive,
           bodyColor: kCosTextActive,
         );
+  }
+
+  AppBarTheme get buildCosAppBarTheme {
+    return const AppBarTheme(
+      color: Colors.transparent,
+      elevation: 0,
+    );
   }
 
   InputDecorationTheme get buildInputDecorationTheme {

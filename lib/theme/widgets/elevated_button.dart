@@ -74,11 +74,4 @@ extension ElevatedButtonExtension on ElevatedButton {
       splashFactory: splashFactory ?? buttonStyle.splashFactory,
     );
   }
-
-  height50() {
-    return this.copyWith(
-        style: this._copyWith(
-      minimumSize: MaterialStateProperty.all(const Size.fromHeight(50.0)),
-    ));
-  }
 }
