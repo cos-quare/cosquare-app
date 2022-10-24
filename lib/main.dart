@@ -1,7 +1,9 @@
 import 'package:costarica_app/provider/authentication/authentication_provider.dart';
+import 'package:costarica_app/screens/auth/email_authentication_page.dart';
 import 'package:costarica_app/screens/auth/find_password_page.dart';
 import 'package:costarica_app/screens/auth/login_page.dart';
-import 'package:costarica_app/screens/auth/signup_page.dart';
+import 'package:costarica_app/screens/auth/sign_up_page.dart';
+import 'package:costarica_app/screens/auth/sign_up_complete_page.dart';
 import 'package:costarica_app/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -32,7 +34,9 @@ class App extends StatelessWidget {
     routes: <GoRoute>[
       GoRoute(path: '/', builder: (context, state) => const LoginPage(), routes: <GoRoute>[
         GoRoute(path: 'sign_up', builder: (context, state) => const SignUpPage()),
+        GoRoute(path: 'sign_up_complete', builder: (context, state) => const SignUpCompletePage()),
         GoRoute(path: 'find_password', builder: (context, state) => const FindPasswordPage()),
+        GoRoute(path: 'email_authentication', builder: (context, state) => const EmailAuthenticationPage()),
       ]),
     ],
     errorBuilder: (context, state) => LoginPage(),

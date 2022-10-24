@@ -1,4 +1,6 @@
-import 'package:costarica_app/theme/colors.dart';
+import 'package:costarica_app/theme/style/colors.dart';
+import 'package:costarica_app/theme/style/text_style.dart';
+import 'package:costarica_app/theme/widgets/app_bar.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
@@ -34,23 +36,7 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_new),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.close),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          )
-        ],
-      ),
+      appBar: DefaultAppBar(),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
@@ -70,9 +56,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 SizedBox(height: 40),
                 Text(
                   '사용자 이름',
-                  style: TextStyle(
-                    fontSize: 13.0,
-                  ),
+                  style: regular13,
                 ),
                 SizedBox(height: 8),
                 TextFormField(
@@ -83,16 +67,14 @@ class _SignUpPageState extends State<SignUpPage> {
                         ? null
                         : InkWell(
                             onTap: () => _nameController.clear(),
-                            child: Icon(Icons.cancel, color: Color(0xFFBDBDBD)),
+                            child: Icon(Icons.cancel, color: kCosGray150),
                           ),
                   ),
                 ),
                 SizedBox(height: 20),
                 Text(
                   '이메일 주소',
-                  style: TextStyle(
-                    fontSize: 13.0,
-                  ),
+                  style: regular13,
                 ),
                 SizedBox(height: 8),
                 TextFormField(
@@ -103,16 +85,14 @@ class _SignUpPageState extends State<SignUpPage> {
                         ? null
                         : InkWell(
                             onTap: () => _emailController.clear(),
-                            child: Icon(Icons.cancel, color: Color(0xFFBDBDBD)),
+                            child: Icon(Icons.cancel, color: kCosGray150),
                           ),
                   ),
                 ),
                 SizedBox(height: 20),
                 Text(
                   '비밀번호',
-                  style: TextStyle(
-                    fontSize: 13.0,
-                  ),
+                  style: regular13,
                 ),
                 SizedBox(height: 8),
                 TextFormField(
@@ -123,26 +103,24 @@ class _SignUpPageState extends State<SignUpPage> {
                         ? null
                         : InkWell(
                             onTap: () => _passwordController.clear(),
-                            child: Icon(Icons.cancel, color: Color(0xFFBDBDBD)),
+                            child: Icon(Icons.cancel, color: kCosGray150),
                           ),
                   ),
                 ),
                 SizedBox(height: 40),
                 ElevatedButton(
-                  onPressed: () => context.go('/login'),
+                  onPressed: () => context.go('/sign_up_complete'),
                   child: Text('회원가입'),
                 ),
                 SizedBox(height: 10),
                 Text.rich(TextSpan(
                   text: '회원가입 시 Costarica 서비스 ',
-                  style: TextStyle(
-                    fontSize: 13.0,
-                  ),
+                  style: regular13,
                   children: [
                     TextSpan(
                       text: '이용약관',
                       style: TextStyle(
-                        color: kCosTextLink,
+                        color: kCosLink,
                       ),
                     ),
                     TextSpan(
@@ -151,7 +129,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     TextSpan(
                       text: '개인정보 보호 정책',
                       style: TextStyle(
-                        color: kCosTextLink,
+                        color: kCosLink,
                       ),
                     ),
                     TextSpan(
