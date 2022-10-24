@@ -2,8 +2,13 @@ import 'package:costarica_app/theme/colors.dart';
 import 'package:costarica_app/theme/widgets/check_box.dart';
 import 'package:costarica_app/theme/widgets/elevated_button.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
+
+import '../../provider/authentication/authentication_provider.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -74,11 +79,11 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => context.read<AuthenticationProvider>().login(),
                   child: const Text(
                     '로그인',
                   ),
-                ).height50(),
+                ),
                 SizedBox(height: 12),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -94,8 +99,11 @@ class _LoginPageState extends State<LoginPage> {
                         thickness: 1,
                       ),
                     ),
-                    Text(
-                      '회원가입',
+                    InkWell(
+                      child: Text(
+                        '회원가입',
+                      ),
+                      onTap: () => context.go('/sign_up'),
                     )
                   ],
                 ),
@@ -106,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => context.read<AuthenticationProvider>().login(),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -125,16 +133,13 @@ class _LoginPageState extends State<LoginPage> {
                           ))
                     ],
                   ),
-                ).copyWith(
-                    style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(
-                    const Color(0xffE8CF3F),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xffE8CF3F),
                   ),
-                  minimumSize: MaterialStateProperty.all(Size(0, 50)),
-                )),
+                ),
                 SizedBox(height: 12),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => context.read<AuthenticationProvider>().login(),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -151,13 +156,10 @@ class _LoginPageState extends State<LoginPage> {
                       )
                     ],
                   ),
-                ).copyWith(
-                    style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(
-                    const Color(0xffE2E2E2),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xffE2E2E2),
                   ),
-                  minimumSize: MaterialStateProperty.all(Size(0, 50)),
-                )),
+                ),
                 SizedBox(height: 28),
               ],
             ),

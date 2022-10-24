@@ -8,6 +8,7 @@ const kCosPurple700 = Color(0xFFEAA4A4);
 //text
 const kCosTextActive = Color(0xfff8f8f8);
 const kCosTextDisable = Color(0xff565656);
+const kCosTextLink = Color(0xff3F97FF);
 //error
 const kCosErrorRed = Color(0xFFEC3333);
 
