@@ -1,4 +1,5 @@
-import 'package:costarica_app/theme/colors.dart';
+import 'package:costarica_app/theme/style/colors.dart';
+import 'package:costarica_app/theme/style/text_style.dart';
 import 'package:costarica_app/theme/widgets/check_box.dart';
 import 'package:costarica_app/theme/widgets/elevated_button.dart';
 import 'package:flutter/material.dart';
@@ -40,9 +41,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 32),
                 Text(
                   '이메일 주소',
-                  style: TextStyle(
-                    fontSize: 13.0,
-                  ),
+                  style: regular13,
                 ),
                 SizedBox(height: 8),
                 TextFormField(
@@ -51,9 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 20),
                 Text(
                   '비밀번호',
-                  style: TextStyle(
-                    fontSize: 13.0,
-                  ),
+                  style: regular13,
                 ),
                 SizedBox(height: 8),
                 TextFormField(
@@ -88,8 +85,11 @@ class _LoginPageState extends State<LoginPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      '비밀번호 재설정',
+                    InkWell(
+                      onTap: () => context.go('/find_password'),
+                      child: Text(
+                        '비밀번호 재설정',
+                      ),
                     ),
                     SizedBox(
                       height: 8,
@@ -109,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 20),
                 Divider(
-                  color: const Color(0xff333333),
+                  color: kCosGray700,
                   thickness: 1,
                 ),
                 SizedBox(height: 20),

@@ -1,4 +1,4 @@
-import 'package:costarica_app/theme/colors.dart';
+import 'package:costarica_app/theme/style/colors.dart';
 import 'package:flutter/material.dart';
 
 final ThemeData kCosTheme = _buildCosTheme();
@@ -30,27 +30,41 @@ class CustomThemeData {
     return base.textTheme
         .copyWith(
           headline5: baseTextTheme.headline5?.copyWith(
-            fontWeight: FontWeight.w700,
             fontSize: 24.0,
+            fontWeight: FontWeight.w700,
+            color: kCosGray025,
+            letterSpacing: -0.32,
           ),
           headline6: baseTextTheme.headline6?.copyWith(
-            fontSize: 18.0,
+            fontSize: 16.0,
+            fontWeight: FontWeight.w700,
+            color: kCosGray025,
+            letterSpacing: -0.32,
           ),
-          caption: baseTextTheme.caption?.copyWith(
+          bodyText1: baseTextTheme.bodyText1?.copyWith(
+            fontSize: 14.0,
             fontWeight: FontWeight.w400,
-            fontSize: 19.0,
+            color: kCosGray025,
+            height: 1.5,
+            letterSpacing: -0.32,
           ),
           bodyText2: baseTextTheme.bodyText2?.copyWith(
-            fontSize: 15.0,
+            fontSize: 13.0,
+            fontWeight: FontWeight.w400,
+            color: kCosGray025,
+            letterSpacing: -0.32,
           ),
           button: baseTextTheme.button?.copyWith(
             fontSize: 15.0,
+            fontWeight: FontWeight.w500,
+            color: kCosGray025,
+            letterSpacing: -0.32,
           ),
         )
         .apply(
           fontFamily: kDefaultFont,
-          displayColor: kCosTextActive,
-          bodyColor: kCosTextActive,
+          displayColor: kCosGray025,
+          bodyColor: kCosGray025,
         );
   }
 
@@ -63,31 +77,31 @@ class CustomThemeData {
 
   InputDecorationTheme get buildInputDecorationTheme {
     return const InputDecorationTheme(
-      hintStyle: TextStyle(color: kCosTextDisable),
+      hintStyle: TextStyle(color: kCosGray600),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(4.0)),
-        borderSide: BorderSide(color: kCosWidgetBorder),
+        borderSide: BorderSide(color: kCosGray700),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(4.0)),
-        borderSide: BorderSide(color: kCosWidgetBorder),
+        borderSide: BorderSide(color: kCosGray700),
       ),
       disabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(4.0)),
-        borderSide: BorderSide(color: kCosWidgetBorder),
+        borderSide: BorderSide(color: kCosGray700),
       ),
       errorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(4.0)),
-        borderSide: BorderSide(color: kCosErrorRed),
+        borderSide: BorderSide(color: kCosError),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(4.0)),
-        borderSide: BorderSide(color: kCosTextActive),
+        borderSide: BorderSide(color: kCosGray025),
       ),
-      suffixStyle: TextStyle(color: kCosTextActive),
+      suffixStyle: TextStyle(color: kCosGray025),
       filled: true,
-      fillColor: kCosWidgetBackground,
-      floatingLabelStyle: TextStyle(color: kCosTextActive),
+      fillColor: kCosGray800,
+      floatingLabelStyle: TextStyle(color: kCosGray025),
     );
   }
 
@@ -101,17 +115,17 @@ class CustomThemeData {
     return ThemeData.dark().colorScheme.copyWith(
           background: Colors.black,
           primary: kCosPurple500,
-          onPrimary: kCosTextActive,
-          secondary: kCosTextActive,
-          error: kCosErrorRed,
+          onPrimary: kCosGray025,
+          secondary: kCosGray025,
+          error: kCosError,
         );
   }
 
   CheckboxThemeData get buildCosCheckBoxTheme {
     return const CheckboxThemeData().copyWith(
-      side: BorderSide(color: kCosWidgetBorder, width: 1),
+      side: BorderSide(color: kCosGray700, width: 1),
       fillColor: MaterialStateProperty.all(kCosPurple500),
-      checkColor: MaterialStateProperty.all(kCosTextActive),
+      checkColor: MaterialStateProperty.all(kCosGray025),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(2),
       ),
