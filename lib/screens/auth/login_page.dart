@@ -1,23 +1,23 @@
+import 'package:costarica_app/river_pod/authentication/authentication.dart';
 import 'package:costarica_app/theme/style/colors.dart';
 import 'package:costarica_app/theme/style/text_style.dart';
 import 'package:costarica_app/theme/widgets/check_box.dart';
-import 'package:costarica_app/theme/widgets/elevated_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 
-import '../../provider/authentication/authentication_provider.dart';
-
-class LoginPage extends StatefulWidget {
+class LoginPage extends ConsumerStatefulWidget {
   const LoginPage({super.key});
+  static String get routeName => 'login';
+  static String get routeLocation => '/$routeName';
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  bool isChecked = false;
+class _LoginPageState extends ConsumerState<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    bool isChecked = false;
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
@@ -63,9 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                     Checkbox(
                       value: isChecked,
                       onChanged: (value) {
-                        setState(() {
-                          isChecked = value ?? false;
-                        });
+                        isChecked = value ?? false;
                       },
                     ).backgroundColor(),
                     SizedBox(width: 8),
@@ -76,7 +74,10 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () => context.read<AuthenticationProvider>().login(),
+                  onPressed: () => ref.read(authProvider.notifier).login(
+                        "myEmail",
+                        "myPassword",
+                      ),
                   child: const Text(
                     '로그인',
                   ),
@@ -114,7 +115,10 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () => context.read<AuthenticationProvider>().login(),
+                  onPressed: () => ref.read(authProvider.notifier).login(
+                        "myEmail",
+                        "myPassword",
+                      ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -139,7 +143,10 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 12),
                 ElevatedButton(
-                  onPressed: () => context.read<AuthenticationProvider>().login(),
+                  onPressed: () => ref.read(authProvider.notifier).login(
+                        "myEmail",
+                        "myPassword",
+                      ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
