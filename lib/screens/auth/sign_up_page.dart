@@ -2,7 +2,6 @@ import 'package:costarica_app/theme/style/colors.dart';
 import 'package:costarica_app/theme/style/text_style.dart';
 import 'package:costarica_app/theme/widgets/app_bar.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatefulWidget {
