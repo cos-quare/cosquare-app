@@ -1,29 +1,25 @@
+import 'package:costarica_app/screens/home/album_page.dart';
+import 'package:costarica_app/screens/home/feed_page.dart';
+import 'package:costarica_app/screens/home/matching_page.dart';
+import 'package:costarica_app/screens/home/my_page.dart';
+import 'package:costarica_app/screens/home/setting_page.dart';
 import 'package:costarica_app/theme/style/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-class TabPage extends StatelessWidget {
-  const TabPage({Key? key, required this.child}) : super(key: key);
+class TabPage extends ConsumerStatefulWidget {
+  const TabPage({super.key, required this.child});
   final Widget child;
-
+  static String get routeName => 'tab';
+  static String get routeLocation => '/';
   @override
-  Widget build(BuildContext context) {
-    return PageTabView(
-      child: child,
-    );
-  }
+  ConsumerState<ConsumerStatefulWidget> createState() => _TabPageState(child);
 }
 
-class PageTabView extends StatefulWidget {
-  const PageTabView({Key? key, required this.child}) : super(key: key);
-
+class _TabPageState extends ConsumerState<TabPage> with WidgetsBindingObserver {
   final Widget child;
-
-  @override
-  State<PageTabView> createState() => _PageTabViewState();
-}
-
-class _PageTabViewState extends State<PageTabView> with WidgetsBindingObserver {
+  _TabPageState(this.child);
   int _selectedPage = 0;
 
   @override
@@ -66,19 +62,6 @@ class _PageTabViewState extends State<PageTabView> with WidgetsBindingObserver {
         ),
         child: _navigationBar(),
       ),
-      floatingActionButton: Container(
-        height: 60,
-        width: double.infinity,
-        child: InkWell(
-          onTap: () {},
-          child: const CircleAvatar(
-            radius: 30,
-            backgroundColor: kCosPurple500,
-            child: Icon(Icons.add, size: 36, color: kCosPurple100),
-          ),
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 
@@ -95,15 +78,23 @@ class _PageTabViewState extends State<PageTabView> with WidgetsBindingObserver {
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.maps_home_work_outlined),
-          label: '홈',
+          label: '피드',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.production_quantity_limits_outlined),
-          label: '상품',
+          label: '매칭',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.person_outline),
-          label: '더보기',
+          label: '앨범',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.person_outline),
+          label: '마이페이지',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.person_outline),
+          label: '설정',
         ),
       ],
       selectedFontSize: 11,
@@ -118,14 +109,20 @@ class _PageTabViewState extends State<PageTabView> with WidgetsBindingObserver {
   int _calculateSelectedIndex(BuildContext context) {
     final GoRouter route = GoRouter.of(context);
     final String location = route.location;
-    if (location == '/home') {
+    if (location == FeedPage.routeLocation) {
       _selectedPage = 0;
     }
-    if (location == '/product') {
+    if (location == MatchingPage.routeLocation) {
       _selectedPage = 1;
     }
-    if (location == '/more') {
+    if (location == AlbumPage.routeLocation) {
       _selectedPage = 2;
+    }
+    if (location == MyPage.routeLocation) {
+      _selectedPage = 3;
+    }
+    if (location == SettingPage.routeLocation) {
+      _selectedPage = 4;
     }
     return _selectedPage;
   }
@@ -133,13 +130,19 @@ class _PageTabViewState extends State<PageTabView> with WidgetsBindingObserver {
   void _onItemTapped(int index, BuildContext context) {
     switch (index) {
       case 0:
-        GoRouter.of(context).go('/home');
+        GoRouter.of(context).go(FeedPage.routeLocation);
         break;
       case 1:
-        GoRouter.of(context).go('/product');
+        GoRouter.of(context).go(MatchingPage.routeLocation);
         break;
       case 2:
-        GoRouter.of(context).go('/more');
+        GoRouter.of(context).go(AlbumPage.routeLocation);
+        break;
+      case 3:
+        GoRouter.of(context).go(MyPage.routeLocation);
+        break;
+      case 4:
+        GoRouter.of(context).go(SettingPage.routeLocation);
         break;
     }
   }
