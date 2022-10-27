@@ -1,6 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:async';
 
+import 'package:costarica_app/screens/home/album_page.dart';
+import 'package:costarica_app/screens/home/feed_page.dart';
+import 'package:costarica_app/screens/home/matching_page.dart';
+import 'package:costarica_app/screens/home/my_page.dart';
+import 'package:costarica_app/screens/home/setting_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -8,65 +13,64 @@ import 'package:go_router/go_router.dart';
 import 'package:costarica_app/river_pod/authentication/authentication.dart';
 import 'package:costarica_app/screens/auth/login_page.dart';
 import 'package:costarica_app/screens/common/error_page.dart';
-import 'package:costarica_app/screens/home/home_page.dart';
-import 'package:costarica_app/screens/home/more_page.dart';
-import 'package:costarica_app/screens/home/product_page.dart';
-import 'package:costarica_app/screens/root_page.dart';
+import 'package:costarica_app/screens/common/root_page.dart';
 import 'package:costarica_app/screens/tab_page.dart';
 import 'package:costarica_app/util/simple_logger.dart';
 
-final navigatorKey = GlobalKey<NavigatorState>();
+final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
+final GlobalKey<NavigatorState> _shellNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'tab');
 
 final routerProvider = Provider<GoRouter>((ref) {
   final isAuth = ref.watch(authProvider);
 
   return GoRouter(
-    navigatorKey: navigatorKey,
+    navigatorKey: _rootNavigatorKey,
     debugLogDiagnostics: true,
+    initialLocation: '/login',
     redirect: (context, state) {
       final areWeLoggingIn = state.location == LoginPage.routeLocation;
       if (!isAuth) return areWeLoggingIn ? null : LoginPage.routeLocation;
 
-      if (areWeLoggingIn) return HomePage.routeLocation;
+      if (areWeLoggingIn) return FeedPage.routeLocation;
 
       return null;
     },
     routes: [
-      GoRoute(
-        name: HomePage.routeName,
-        path: HomePage.routeLocation,
-        builder: (context, _) => const HomePage(),
-      ),
       GoRoute(
         name: LoginPage.routeName,
         path: LoginPage.routeLocation,
         builder: (context, _) => const LoginPage(),
       ),
       ShellRoute(
-        pageBuilder: (context, state, child) {
-          return MaterialPage(
-            key: state.pageKey,
-            child: TabPage(child: child),
-          );
+        navigatorKey: _shellNavigatorKey,
+        builder: (context, state, child) {
+          return TabPage(child: child);
         },
         routes: [
           GoRoute(
-            path: '/home',
-            pageBuilder: (context, state) {
-              return const MaterialPage(child: HomePage());
-            },
+            name: FeedPage.routeName,
+            path: FeedPage.routeLocation,
+            builder: (context, _) => const FeedPage(),
           ),
           GoRoute(
-            path: '/product',
-            pageBuilder: (context, state) {
-              return const MaterialPage(child: ProductPage());
-            },
+            name: MatchingPage.routeName,
+            path: MatchingPage.routeLocation,
+            builder: (context, _) => const MatchingPage(),
           ),
           GoRoute(
-            path: '/more',
-            pageBuilder: (context, state) {
-              return const MaterialPage(child: MorePage());
-            },
+            name: AlbumPage.routeName,
+            path: AlbumPage.routeLocation,
+            builder: (context, _) => const AlbumPage(),
+          ),
+          GoRoute(
+            name: MyPage.routeName,
+            path: MyPage.routeLocation,
+            builder: (context, _) => const MyPage(),
+          ),
+          GoRoute(
+            name: SettingPage.routeName,
+            path: SettingPage.routeLocation,
+            builder: (context, _) => const SettingPage(),
           ),
         ],
       ),
