@@ -1,10 +1,18 @@
 import 'package:costarica_app/theme/style/text_style.dart';
 import 'package:costarica_app/theme/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-class SignUpCompletePage extends StatelessWidget {
-  const SignUpCompletePage({Key? key}) : super(key: key);
+class SignUpCompletePage extends ConsumerStatefulWidget {
+  const SignUpCompletePage({super.key});
+  static String get routeName => 'sign_up_complete';
+  static String get routeLocation => '/$routeName';
+  @override
+  ConsumerState<ConsumerStatefulWidget> createState() => _SignUpCompletePageState();
+}
+
+class _SignUpCompletePageState extends ConsumerState<SignUpCompletePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

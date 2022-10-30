@@ -1,10 +1,17 @@
 import 'package:costarica_app/theme/style/text_style.dart';
 import 'package:costarica_app/theme/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class EmailAuthenticationPage extends StatelessWidget {
+class EmailAuthenticationPage extends ConsumerStatefulWidget {
   const EmailAuthenticationPage({super.key});
+  static String get routeName => 'email_authentication';
+  static String get routeLocation => '/$routeName';
+  @override
+  ConsumerState<ConsumerStatefulWidget> createState() => _EmailAuthenticationPageState();
+}
 
+class _EmailAuthenticationPageState extends ConsumerState<EmailAuthenticationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

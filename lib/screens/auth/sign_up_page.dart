@@ -1,17 +1,20 @@
+import 'package:costarica_app/screens/auth/sign_up_complete_page.dart';
 import 'package:costarica_app/theme/style/colors.dart';
 import 'package:costarica_app/theme/style/text_style.dart';
 import 'package:costarica_app/theme/widgets/app_bar.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 
-class SignUpPage extends StatefulWidget {
+class SignUpPage extends ConsumerStatefulWidget {
   const SignUpPage({super.key});
-
+  static String get routeName => 'sign_up_process';
+  static String get routeLocation => '/$routeName';
   @override
-  State<SignUpPage> createState() => _SignUpPageState();
+  ConsumerState<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
+class _SignUpPageState extends ConsumerState<SignUpPage> {
   late TextEditingController _emailController;
   late TextEditingController _passwordController;
   late TextEditingController _nameController;
@@ -108,7 +111,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 SizedBox(height: 40),
                 ElevatedButton(
-                  onPressed: () => context.go('/sign_up_complete'),
+                  onPressed: () => GoRouter.of(context).go(SignUpCompletePage.routeLocation),
                   child: Text('회원가입'),
                 ),
                 SizedBox(height: 10),
