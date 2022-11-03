@@ -1,3 +1,4 @@
+import 'package:costarica_app/screens/auth/email_authentication_page.dart';
 import 'package:costarica_app/theme/style/text_style.dart';
 import 'package:costarica_app/theme/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,7 @@ class _FindPasswordPageState extends ConsumerState<FindPasswordPage> {
               SizedBox(height: 20),
               ElevatedButton(
                 child: Text('이메일 전송'),
-                onPressed: () => context.push('/email_authentication'),
+                onPressed: () => context.replace(EmailAuthenticationPage.routeLocation),
               ),
             ],
           ),

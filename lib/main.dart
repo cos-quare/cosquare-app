@@ -1,5 +1,4 @@
-import 'package:costarica_app/river_pod/authentication/authentication.dart';
-import 'package:costarica_app/river_pod/routes/routes.dart';
+import 'package:costarica_app/providers/routes/routes.dart';
 import 'package:costarica_app/screens/auth/email_authentication_page.dart';
 import 'package:costarica_app/screens/auth/find_password_page.dart';
 import 'package:costarica_app/screens/auth/login_page.dart';

@@ -1,4 +1,4 @@
-import 'package:costarica_app/river_pod/authentication/authentication.dart';
+import 'package:costarica_app/providers/proivders.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -22,7 +22,7 @@ class _SettingPageState extends ConsumerState<SettingPage> {
           children: [
             ElevatedButton(
               onPressed: () {
-                ref.read(authProvider.notifier).logout();
+                ref.read(authProvider.notifier).signOut();
               },
               child: const Text("Logout"),
             ),

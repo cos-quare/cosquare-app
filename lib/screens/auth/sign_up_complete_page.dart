@@ -1,3 +1,4 @@
+import 'package:costarica_app/screens/auth/login_page.dart';
 import 'package:costarica_app/theme/style/text_style.dart';
 import 'package:costarica_app/theme/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,7 @@ class _SignUpCompletePageState extends ConsumerState<SignUpCompletePage> {
               Text('코스타리카에 가입하신 걸 환영해요!', style: regular14),
               SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () => context.push('/login'),
+                onPressed: () => context.go(LoginPage.routeLocation),
                 child: const Text(
                   '시작하기',
                 ),

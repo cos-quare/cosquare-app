@@ -1,4 +1,5 @@
-import 'package:costarica_app/river_pod/authentication/authentication.dart';
+import 'package:costarica_app/model/auth/request/sign_in_input.dart';
+import 'package:costarica_app/providers/proivders.dart';
 import 'package:costarica_app/screens/auth/find_password_page.dart';
 import 'package:costarica_app/screens/auth/sign_up_page.dart';
 import 'package:costarica_app/theme/style/colors.dart';
@@ -76,10 +77,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () => ref.read(authProvider.notifier).login(
-                        "myEmail",
-                        "myPassword",
-                      ),
+                  onPressed: () => ref
+                      .read(authProvider.notifier)
+                      .signIn(SignInInput(email: "jason@twosun.com", password: "123456")),
                   child: const Text(
                     '로그인',
                   ),
@@ -89,7 +89,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     InkWell(
-                      onTap: () => context.go(FindPasswordPage.routeLocation),
+                      onTap: () => context.push(FindPasswordPage.routeLocation),
                       child: Text(
                         '비밀번호 재설정',
                       ),
@@ -106,7 +106,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                       child: Text(
                         '회원가입',
                       ),
-                      onTap: () => context.go(SignUpPage.routeLocation),
+                      onTap: () => context.push(SignUpPage.routeLocation),
                     )
                   ],
                 ),
@@ -117,10 +117,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () => ref.read(authProvider.notifier).login(
-                        "myEmail",
-                        "myPassword",
-                      ),
+                  onPressed: () => ref
+                      .read(authProvider.notifier)
+                      .signIn(SignInInput(email: "jason@twosun.com", password: "123456")),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -145,10 +144,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                 ),
                 SizedBox(height: 12),
                 ElevatedButton(
-                  onPressed: () => ref.read(authProvider.notifier).login(
-                        "myEmail",
-                        "myPassword",
-                      ),
+                  onPressed: () => ref
+                      .read(authProvider.notifier)
+                      .signIn(SignInInput(email: "jason@twosun.com", password: "123456")),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

@@ -111,7 +111,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                 ),
                 SizedBox(height: 40),
                 ElevatedButton(
-                  onPressed: () => GoRouter.of(context).go(SignUpCompletePage.routeLocation),
+                  onPressed: () => context.replace(SignUpCompletePage.routeLocation),
                   child: Text('회원가입'),
                 ),
                 SizedBox(height: 10),
