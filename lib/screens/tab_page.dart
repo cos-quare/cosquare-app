@@ -14,12 +14,10 @@ class TabPage extends ConsumerStatefulWidget {
   static String get routeName => 'tab';
   static String get routeLocation => '/';
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _TabPageState(child);
+  ConsumerState<ConsumerStatefulWidget> createState() => _TabPageState();
 }
 
 class _TabPageState extends ConsumerState<TabPage> with WidgetsBindingObserver {
-  final Widget child;
-  _TabPageState(this.child);
   int _selectedPage = 0;
 
   @override
@@ -130,19 +128,19 @@ class _TabPageState extends ConsumerState<TabPage> with WidgetsBindingObserver {
   void _onItemTapped(int index, BuildContext context) {
     switch (index) {
       case 0:
-        GoRouter.of(context).go(FeedPage.routeLocation);
+        context.go(FeedPage.routeLocation);
         break;
       case 1:
-        GoRouter.of(context).go(MatchingPage.routeLocation);
+        context.go(MatchingPage.routeLocation);
         break;
       case 2:
-        GoRouter.of(context).go(AlbumPage.routeLocation);
+        context.go(AlbumPage.routeLocation);
         break;
       case 3:
-        GoRouter.of(context).go(MyPage.routeLocation);
+        context.go(MyPage.routeLocation);
         break;
       case 4:
-        GoRouter.of(context).go(SettingPage.routeLocation);
+        context.go(SettingPage.routeLocation);
         break;
     }
   }

@@ -1,16 +1,19 @@
+import 'package:costarica_app/screens/auth/email_authentication_page.dart';
 import 'package:costarica_app/theme/style/text_style.dart';
 import 'package:costarica_app/theme/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-class FindPasswordPage extends StatefulWidget {
+class FindPasswordPage extends ConsumerStatefulWidget {
   const FindPasswordPage({super.key});
-
+  static String get routeName => 'find_password';
+  static String get routeLocation => '/$routeName';
   @override
-  State<FindPasswordPage> createState() => _FindPasswordPageState();
+  ConsumerState<FindPasswordPage> createState() => _FindPasswordPageState();
 }
 
-class _FindPasswordPageState extends State<FindPasswordPage> {
+class _FindPasswordPageState extends ConsumerState<FindPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +40,7 @@ class _FindPasswordPageState extends State<FindPasswordPage> {
               SizedBox(height: 20),
               ElevatedButton(
                 child: Text('이메일 전송'),
-                onPressed: () => context.push('/email_authentication'),
+                onPressed: () => context.replace(EmailAuthenticationPage.routeLocation),
               ),
             ],
           ),
