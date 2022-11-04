@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class ErrorPage extends StatefulWidget {
   const ErrorPage({super.key, required this.exception});
-
+  static String get routeName => 'error';
+  static String get routeLocation => '$routeName';
   final Exception? exception;
 
   @override
