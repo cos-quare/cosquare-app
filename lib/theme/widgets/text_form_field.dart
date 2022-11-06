@@ -1,33 +1,41 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class DefaultTextFormField extends StatelessWidget {
+enum TextFieldType {
+  clear,
+  basic,
+}
+
+class CSTextFormField extends ConsumerStatefulWidget {
+  TextFieldType type = TextFieldType.basic;
   final TextEditingController? controller;
-  String? initialValue;
   FocusNode? focusNode;
-  InputDecoration? decoration = const InputDecoration();
+  String? initialValue;
+  InputDecoration decoration;
   TextInputType? keyboardType;
-  TextCapitalization textCapitalization = TextCapitalization.none;
+  TextCapitalization textCapitalization;
   TextInputAction? textInputAction;
   TextStyle? style;
   StrutStyle? strutStyle;
   TextDirection? textDirection;
-  TextAlign textAlign = TextAlign.start;
+  TextAlign textAlign;
   TextAlignVertical? textAlignVertical;
-  bool autofocus = false;
-  bool readOnly = false;
+  bool autofocus;
+  bool readOnly;
   ToolbarOptions? toolbarOptions;
   bool? showCursor;
-  String obscuringCharacter = '•';
-  bool obscureText = false;
-  bool autocorrect = true;
+  String obscuringCharacter;
+  bool obscureText;
+  bool autocorrect;
   SmartDashesType? smartDashesType;
   SmartQuotesType? smartQuotesType;
-  bool enableSuggestions = true;
+  bool enableSuggestions;
   MaxLengthEnforcement? maxLengthEnforcement;
-  int? maxLines = 1;
+  int? maxLines;
   int? minLines;
-  bool expands = false;
+  bool expands;
   int? maxLength;
   ValueChanged<String>? onChanged;
   GestureTapCallback? onTap;
@@ -37,12 +45,12 @@ class DefaultTextFormField extends StatelessWidget {
   String? Function(String?)? validator;
   List<TextInputFormatter>? inputFormatters;
   bool? enabled;
-  double cursorWidth = 2.0;
+  double cursorWidth;
   double? cursorHeight;
   Radius? cursorRadius;
   Color? cursorColor;
   Brightness? keyboardAppearance;
-  EdgeInsets scrollPadding = const EdgeInsets.all(20.0);
+  EdgeInsets scrollPadding;
   bool? enableInteractiveSelection;
   TextSelectionControls? selectionControls;
   InputCounterWidgetBuilder? buildCounter;
@@ -51,35 +59,36 @@ class DefaultTextFormField extends StatelessWidget {
   AutovalidateMode? autovalidateMode;
   ScrollController? scrollController;
   String? restorationId;
-  bool enableIMEPersonalizedLearning = true;
+  bool enableIMEPersonalizedLearning;
   MouseCursor? mouseCursor;
-  DefaultTextFormField({
+  CSTextFormField({
     Key? key,
     this.controller,
     this.initialValue,
     this.focusNode,
+    this.decoration = const InputDecoration(),
     this.keyboardType,
-    required this.textCapitalization,
+    this.textCapitalization = TextCapitalization.none,
     this.textInputAction,
     this.style,
     this.strutStyle,
     this.textDirection,
-    required this.textAlign,
+    this.textAlign = TextAlign.start,
     this.textAlignVertical,
-    required this.autofocus,
-    required this.readOnly,
+    this.autofocus = false,
+    this.readOnly = false,
     this.toolbarOptions,
     this.showCursor,
-    required this.obscuringCharacter,
-    required this.obscureText,
-    required this.autocorrect,
+    this.obscuringCharacter = '•',
+    this.obscureText = false,
+    this.autocorrect = true,
     this.smartDashesType,
     this.smartQuotesType,
-    required this.enableSuggestions,
+    this.enableSuggestions = true,
     this.maxLengthEnforcement,
-    this.maxLines,
+    this.maxLines = 1,
     this.minLines,
-    required this.expands,
+    this.expands = false,
     this.maxLength,
     this.onChanged,
     this.onTap,
@@ -89,11 +98,12 @@ class DefaultTextFormField extends StatelessWidget {
     this.validator,
     this.inputFormatters,
     this.enabled,
-    required this.cursorWidth,
+    this.cursorWidth = 2.0,
     this.cursorHeight,
     this.cursorRadius,
     this.cursorColor,
     this.keyboardAppearance,
+    this.scrollPadding = const EdgeInsets.all(20.0),
     this.enableInteractiveSelection,
     this.selectionControls,
     this.buildCounter,
@@ -102,63 +112,178 @@ class DefaultTextFormField extends StatelessWidget {
     this.autovalidateMode,
     this.scrollController,
     this.restorationId,
-    required this.enableIMEPersonalizedLearning,
+    this.enableIMEPersonalizedLearning = true,
     this.mouseCursor,
-  }) : super(key: key);
+  });
+  CSTextFormField.clear({
+    Key? key,
+    this.type = TextFieldType.clear,
+    required this.controller,
+    this.initialValue,
+    required this.focusNode,
+    this.decoration = const InputDecoration(),
+    this.keyboardType,
+    this.textCapitalization = TextCapitalization.none,
+    this.textInputAction,
+    this.style,
+    this.strutStyle,
+    this.textDirection,
+    this.textAlign = TextAlign.start,
+    this.textAlignVertical,
+    this.autofocus = false,
+    this.readOnly = false,
+    this.toolbarOptions,
+    this.showCursor,
+    this.obscuringCharacter = '•',
+    this.obscureText = false,
+    this.autocorrect = true,
+    this.smartDashesType,
+    this.smartQuotesType,
+    this.enableSuggestions = true,
+    this.maxLengthEnforcement,
+    this.maxLines = 1,
+    this.minLines,
+    this.expands = false,
+    this.maxLength,
+    this.onChanged,
+    this.onTap,
+    this.onEditingComplete,
+    this.onFieldSubmitted,
+    this.onSaved,
+    this.validator,
+    this.inputFormatters,
+    this.enabled,
+    this.cursorWidth = 2.0,
+    this.cursorHeight,
+    this.cursorRadius,
+    this.cursorColor,
+    this.keyboardAppearance,
+    this.scrollPadding = const EdgeInsets.all(20.0),
+    this.enableInteractiveSelection,
+    this.selectionControls,
+    this.buildCounter,
+    this.scrollPhysics,
+    this.autofillHints,
+    this.autovalidateMode,
+    this.scrollController,
+    this.restorationId,
+    this.enableIMEPersonalizedLearning = true,
+    this.mouseCursor,
+  });
+
+  @override
+  ConsumerState<ConsumerStatefulWidget> createState() => _CSTextFormFieldState();
+}
+
+class _CSTextFormFieldState extends ConsumerState<CSTextFormField> {
+  final isDirty = StateProvider((ref) => false);
+  late final TextEditingController controller;
+  late final FocusNode focusNode;
+  @override
+  void initState() {
+    controller = widget.controller ?? TextEditingController(text: widget.initialValue);
+    focusNode = widget.focusNode ?? FocusNode();
+    controller.addListener(_clear);
+    focusNode.addListener(_clear);
+    super.initState();
+  }
+
+  void _clear() {
+    if (focusNode.hasFocus && controller.text.isNotEmpty) {
+      ref.read(isDirty.state).state = true;
+    } else {
+      ref.read(isDirty.state).state = false;
+    }
+  }
+
+  @override
+  void dispose() {
+    controller.removeListener(_clear);
+    controller.removeListener(_clear);
+    if (widget.controller == null) controller.dispose();
+    if (widget.focusNode == null) focusNode.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
+    switch (widget.type) {
+      case TextFieldType.clear:
+        this.widget.decoration = this.widget.decoration.copyWith(
+          suffixIcon: Consumer(
+            builder: (context, ref, _) {
+              final _isDirty = ref.watch(isDirty.state).state;
+              return _isDirty
+                  ? IconButton(
+                      icon: Icon(Icons.cancel),
+                      onPressed: () => controller.clear(),
+                    )
+                  : SizedBox.shrink();
+            },
+          ),
+        );
+        break;
+      case TextFieldType.basic:
+      default:
+        break;
+    }
+    return _build();
+  }
+
+  TextFormField _build() {
     return TextFormField(
-      key: this.key,
+      key: this.widget.key,
       controller: this.controller,
-      initialValue: this.initialValue,
+      initialValue: this.widget.initialValue,
+      decoration: this.widget.decoration,
       focusNode: this.focusNode,
-      keyboardType: this.keyboardType,
-      textCapitalization: this.textCapitalization,
-      textInputAction: this.textInputAction,
-      style: this.style,
-      strutStyle: this.strutStyle,
-      textDirection: this.textDirection,
-      textAlign: this.textAlign,
-      textAlignVertical: this.textAlignVertical,
-      autofocus: this.autofocus,
-      readOnly: this.readOnly,
-      toolbarOptions: this.toolbarOptions,
-      showCursor: this.showCursor,
-      obscuringCharacter: this.obscuringCharacter,
-      obscureText: this.obscureText,
-      autocorrect: this.autocorrect,
-      smartDashesType: this.smartDashesType,
-      smartQuotesType: this.smartQuotesType,
-      enableSuggestions: this.enableSuggestions,
-      maxLengthEnforcement: this.maxLengthEnforcement,
-      maxLines: this.maxLines,
-      minLines: this.minLines,
-      expands: this.expands,
-      maxLength: this.maxLength,
-      onChanged: this.onChanged,
-      onTap: this.onTap,
-      onEditingComplete: this.onEditingComplete,
-      onFieldSubmitted: this.onFieldSubmitted,
-      onSaved: this.onSaved,
-      validator: this.validator,
-      inputFormatters: this.inputFormatters,
-      enabled: this.enabled,
-      cursorWidth: this.cursorWidth,
-      cursorHeight: this.cursorHeight,
-      cursorRadius: this.cursorRadius,
-      cursorColor: this.cursorColor,
-      keyboardAppearance: this.keyboardAppearance,
-      enableInteractiveSelection: this.enableInteractiveSelection,
-      selectionControls: this.selectionControls,
-      buildCounter: this.buildCounter,
-      scrollPhysics: this.scrollPhysics,
-      autofillHints: this.autofillHints,
-      autovalidateMode: this.autovalidateMode,
-      scrollController: this.scrollController,
-      restorationId: this.restorationId,
-      enableIMEPersonalizedLearning: this.enableIMEPersonalizedLearning,
-      mouseCursor: this.mouseCursor,
+      keyboardType: this.widget.keyboardType,
+      textCapitalization: this.widget.textCapitalization,
+      textInputAction: this.widget.textInputAction,
+      style: this.widget.style,
+      strutStyle: this.widget.strutStyle,
+      textDirection: this.widget.textDirection,
+      textAlign: this.widget.textAlign,
+      textAlignVertical: this.widget.textAlignVertical,
+      autofocus: this.widget.autofocus,
+      readOnly: this.widget.readOnly,
+      toolbarOptions: this.widget.toolbarOptions,
+      showCursor: this.widget.showCursor,
+      obscuringCharacter: this.widget.obscuringCharacter,
+      obscureText: this.widget.obscureText,
+      autocorrect: this.widget.autocorrect,
+      smartDashesType: this.widget.smartDashesType,
+      smartQuotesType: this.widget.smartQuotesType,
+      enableSuggestions: this.widget.enableSuggestions,
+      maxLengthEnforcement: this.widget.maxLengthEnforcement,
+      maxLines: this.widget.maxLines,
+      minLines: this.widget.minLines,
+      expands: this.widget.expands,
+      maxLength: this.widget.maxLength,
+      onChanged: this.widget.onChanged,
+      onTap: this.widget.onTap,
+      onEditingComplete: this.widget.onEditingComplete,
+      onFieldSubmitted: this.widget.onFieldSubmitted,
+      onSaved: this.widget.onSaved,
+      validator: this.widget.validator,
+      inputFormatters: this.widget.inputFormatters,
+      enabled: this.widget.enabled,
+      cursorWidth: this.widget.cursorWidth,
+      cursorHeight: this.widget.cursorHeight,
+      cursorRadius: this.widget.cursorRadius,
+      cursorColor: this.widget.cursorColor,
+      keyboardAppearance: this.widget.keyboardAppearance,
+      scrollPadding: this.widget.scrollPadding,
+      enableInteractiveSelection: this.widget.enableInteractiveSelection,
+      selectionControls: this.widget.selectionControls,
+      buildCounter: this.widget.buildCounter,
+      scrollPhysics: this.widget.scrollPhysics,
+      autofillHints: this.widget.autofillHints,
+      autovalidateMode: this.widget.autovalidateMode,
+      scrollController: this.widget.scrollController,
+      restorationId: this.widget.restorationId,
+      enableIMEPersonalizedLearning: this.widget.enableIMEPersonalizedLearning,
+      mouseCursor: this.widget.mouseCursor,
     );
   }
 }

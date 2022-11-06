@@ -2,6 +2,7 @@ import 'package:costarica_app/screens/auth/sign_up_complete_page.dart';
 import 'package:costarica_app/theme/style/colors.dart';
 import 'package:costarica_app/theme/style/text_style.dart';
 import 'package:costarica_app/theme/widgets/app_bar.dart';
+import 'package:costarica_app/theme/widgets/text_form_field.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
@@ -16,22 +17,31 @@ class SignUpPage extends ConsumerStatefulWidget {
 
 class _SignUpPageState extends ConsumerState<SignUpPage> {
   late TextEditingController _emailController;
+  late FocusNode _emailFocusNode;
   late TextEditingController _passwordController;
+  late FocusNode _passwordFocusNode;
   late TextEditingController _nameController;
+  late FocusNode _nameFocusNode;
 
   @override
   void initState() {
     _emailController = TextEditingController();
+    _emailFocusNode = FocusNode();
     _passwordController = TextEditingController();
+    _passwordFocusNode = FocusNode();
     _nameController = TextEditingController();
+    _nameFocusNode = FocusNode();
     super.initState();
   }
 
   @override
   void dispose() {
     _emailController.dispose();
+    _emailFocusNode.dispose();
     _passwordController.dispose();
+    _passwordFocusNode.dispose();
     _nameController.dispose();
+    _nameFocusNode.dispose();
     super.dispose();
   }
 
@@ -61,8 +71,9 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                   style: regular13,
                 ),
                 SizedBox(height: 8),
-                TextFormField(
+                CSTextFormField.clear(
                   controller: _nameController,
+                  focusNode: _nameFocusNode,
                   decoration: InputDecoration(
                     hintText: '사용자 이름',
                     suffixIcon: _nameController.text.isNotEmpty
@@ -79,8 +90,9 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                   style: regular13,
                 ),
                 SizedBox(height: 8),
-                TextFormField(
+                CSTextFormField.clear(
                   controller: _emailController,
+                  focusNode: _emailFocusNode,
                   decoration: InputDecoration(
                     hintText: '이메일 주소',
                     suffixIcon: _emailController.text.isNotEmpty
@@ -97,8 +109,9 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                   style: regular13,
                 ),
                 SizedBox(height: 8),
-                TextFormField(
+                CSTextFormField.clear(
                   controller: _passwordController,
+                  focusNode: _passwordFocusNode,
                   decoration: InputDecoration(
                     hintText: '비밀번호',
                     suffixIcon: _passwordController.text.isNotEmpty

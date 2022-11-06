@@ -96,8 +96,9 @@ class CustomThemeData {
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(4.0)),
-        borderSide: BorderSide(color: kCosGray025),
+        borderSide: BorderSide(color: kCosGray500),
       ),
+      suffixIconColor: kCosGray500,
       suffixStyle: TextStyle(color: kCosGray025),
       filled: true,
       fillColor: kCosGray800,

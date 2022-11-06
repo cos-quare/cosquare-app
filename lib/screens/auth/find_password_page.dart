@@ -1,6 +1,7 @@
 import 'package:costarica_app/screens/auth/email_authentication_page.dart';
 import 'package:costarica_app/theme/style/text_style.dart';
 import 'package:costarica_app/theme/widgets/app_bar.dart';
+import 'package:costarica_app/theme/widgets/text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -14,6 +15,21 @@ class FindPasswordPage extends ConsumerStatefulWidget {
 }
 
 class _FindPasswordPageState extends ConsumerState<FindPasswordPage> {
+  late TextEditingController _emailController;
+  late FocusNode _emailFocusNode;
+  @override
+  void initState() {
+    _emailController = TextEditingController();
+    _emailFocusNode = FocusNode();
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _emailFocusNode.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +52,12 @@ class _FindPasswordPageState extends ConsumerState<FindPasswordPage> {
                 style: regular13,
               ),
               SizedBox(height: 8),
-              TextFormField(),
+              CSTextFormField.clear(
+                controller: _emailController,
+                focusNode: _emailFocusNode,
+                decoration: InputDecoration(hintText: '이메일 주소를 입력해주세요.'),
+                keyboardType: TextInputType.emailAddress,
+              ),
               SizedBox(height: 20),
               ElevatedButton(
                 child: Text('이메일 전송'),
