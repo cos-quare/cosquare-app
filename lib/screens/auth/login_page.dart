@@ -5,6 +5,7 @@ import 'package:costarica_app/screens/auth/sign_up_page.dart';
 import 'package:costarica_app/theme/style/colors.dart';
 import 'package:costarica_app/theme/style/text_style.dart';
 import 'package:costarica_app/theme/widgets/check_box.dart';
+import 'package:costarica_app/theme/widgets/text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -18,6 +19,28 @@ class LoginPage extends ConsumerStatefulWidget {
 }
 
 class _LoginPageState extends ConsumerState<LoginPage> {
+  late TextEditingController _emailController;
+  late FocusNode _emailFocusNode;
+  late TextEditingController _passwordController;
+  late FocusNode _passwordFocusNode;
+  @override
+  void initState() {
+    _emailController = TextEditingController();
+    _emailFocusNode = FocusNode();
+    _passwordController = TextEditingController();
+    _passwordFocusNode = FocusNode();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _emailFocusNode.dispose();
+    _passwordController.dispose();
+    _passwordFocusNode.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     bool isChecked = false;
@@ -47,7 +70,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                   style: regular13,
                 ),
                 SizedBox(height: 8),
-                TextFormField(
+                CSTextFormField.clear(
+                  controller: _emailController,
+                  focusNode: _emailFocusNode,
                   decoration: InputDecoration(hintText: '이메일'),
                 ),
                 SizedBox(height: 20),
@@ -56,7 +81,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                   style: regular13,
                 ),
                 SizedBox(height: 8),
-                TextFormField(
+                CSTextFormField.clear(
+                  controller: _passwordController,
+                  focusNode: _passwordFocusNode,
                   decoration: InputDecoration(hintText: '비밀번호'),
                 ),
                 SizedBox(height: 20),
