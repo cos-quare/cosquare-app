@@ -5,8 +5,8 @@
 ---
 ## :muscle: Skills
 <p>
-<img alt="Flutter" src="https://img.shields.io/badge/Flutter-v2.0.3-02569B?style=flat-square&logo=Flutter&logoColor=white">
-<img alt="Dart" src="https://img.shields.io/badge/Dart-v2.12.2-0175C2?style=flat-square&logo=Dart&logoColor=white">
+<img alt="Flutter" src="https://img.shields.io/badge/Flutter-v3.3.7-02569B?style=flat-square&logo=Flutter&logoColor=white">
+<img alt="Dart" src="https://img.shields.io/badge/Dart-v2.18.2-0175C2?style=flat-square&logo=Dart&logoColor=white">
 </p>
 
 ---
