@@ -114,7 +114,7 @@ class CustomThemeData {
 
   ColorScheme get buildDarkColorScheme {
     return ThemeData.dark().colorScheme.copyWith(
-          background: Colors.black,
+          background: kCosGray900,
           primary: kCosPurple500,
           onPrimary: kCosGray025,
           secondary: kCosGray025,

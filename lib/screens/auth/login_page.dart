@@ -5,7 +5,7 @@ import 'package:cosquare_app/screens/auth/sign_up_page.dart';
 import 'package:cosquare_app/theme/style/colors.dart';
 import 'package:cosquare_app/theme/style/text_style.dart';
 import 'package:cosquare_app/theme/widgets/check_box.dart';
-import 'package:cosquare_app/theme/widgets/text_form_field.dart';
+import 'package:cosquare_app/components/text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

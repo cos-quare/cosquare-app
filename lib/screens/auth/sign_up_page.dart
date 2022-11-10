@@ -1,8 +1,8 @@
 import 'package:cosquare_app/screens/auth/sign_up_complete_page.dart';
 import 'package:cosquare_app/theme/style/colors.dart';
 import 'package:cosquare_app/theme/style/text_style.dart';
-import 'package:cosquare_app/theme/widgets/app_bar.dart';
-import 'package:cosquare_app/theme/widgets/text_form_field.dart';
+import 'package:cosquare_app/components/app_bar.dart';
+import 'package:cosquare_app/components/text_form_field.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';

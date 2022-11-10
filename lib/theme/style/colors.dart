@@ -30,4 +30,4 @@ const kCosGray600 = Color(0xFF565656);
 const kCosGray700 = Color(0xFF333333);
 const kCosGray800 = Color(0xFF242424);
 const kCosGray850 = Color(0xFF1A1A1A);
-const kCosBlack = Color(0xFF101010);
+const kCosGray900 = Color(0xFF101010);
