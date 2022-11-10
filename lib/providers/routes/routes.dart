@@ -1,27 +1,27 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:async';
 
-import 'package:costarica_app/providers/auth/auth_provider.dart';
-import 'package:costarica_app/providers/auth/auth_state.dart';
-import 'package:costarica_app/providers/proivders.dart';
-import 'package:costarica_app/screens/auth/email_authentication_page.dart';
-import 'package:costarica_app/screens/auth/find_password_page.dart';
-import 'package:costarica_app/screens/auth/sign_up_complete_page.dart';
-import 'package:costarica_app/screens/auth/sign_up_page.dart';
-import 'package:costarica_app/screens/common/root_page.dart';
-import 'package:costarica_app/screens/home/album_page.dart';
-import 'package:costarica_app/screens/home/feed_page.dart';
-import 'package:costarica_app/screens/home/matching_page.dart';
-import 'package:costarica_app/screens/home/my_page.dart';
-import 'package:costarica_app/screens/home/setting_page.dart';
-import 'package:costarica_app/util/simple_logger.dart';
+import 'package:cosquare_app/providers/auth/auth_provider.dart';
+import 'package:cosquare_app/providers/auth/auth_state.dart';
+import 'package:cosquare_app/providers/proivders.dart';
+import 'package:cosquare_app/screens/auth/email_authentication_page.dart';
+import 'package:cosquare_app/screens/auth/find_password_page.dart';
+import 'package:cosquare_app/screens/auth/sign_up_complete_page.dart';
+import 'package:cosquare_app/screens/auth/sign_up_page.dart';
+import 'package:cosquare_app/screens/common/root_page.dart';
+import 'package:cosquare_app/screens/home/album_page.dart';
+import 'package:cosquare_app/screens/home/feed_page.dart';
+import 'package:cosquare_app/screens/home/matching_page.dart';
+import 'package:cosquare_app/screens/home/my_page.dart';
+import 'package:cosquare_app/screens/home/setting_page.dart';
+import 'package:cosquare_app/util/simple_logger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:costarica_app/screens/auth/login_page.dart';
-import 'package:costarica_app/screens/common/error_page.dart';
-import 'package:costarica_app/screens/tab_page.dart';
+import 'package:cosquare_app/screens/auth/login_page.dart';
+import 'package:cosquare_app/screens/common/error_page.dart';
+import 'package:cosquare_app/screens/tab_page.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 final GlobalKey<NavigatorState> _shellNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'tab');

@@ -287,3 +287,229 @@ class _CSTextFormFieldState extends ConsumerState<CSTextFormField> {
     );
   }
 }
+
+class TestTextField {
+  Key? key;
+  TextFieldType type = TextFieldType.basic;
+  TextEditingController? controller;
+  FocusNode? focusNode;
+  String? initialValue;
+  InputDecoration decoration;
+  TextInputType? keyboardType;
+  TextCapitalization textCapitalization;
+  TextInputAction? textInputAction;
+  TextStyle? style;
+  StrutStyle? strutStyle;
+  TextDirection? textDirection;
+  TextAlign textAlign;
+  TextAlignVertical? textAlignVertical;
+  bool autofocus;
+  bool readOnly;
+  ToolbarOptions? toolbarOptions;
+  bool? showCursor;
+  String obscuringCharacter;
+  bool obscureText;
+  bool autocorrect;
+  SmartDashesType? smartDashesType;
+  SmartQuotesType? smartQuotesType;
+  bool enableSuggestions;
+  MaxLengthEnforcement? maxLengthEnforcement;
+  int? maxLines;
+  int? minLines;
+  bool expands;
+  int? maxLength;
+  ValueChanged<String>? onChanged;
+  GestureTapCallback? onTap;
+  VoidCallback? onEditingComplete;
+  ValueChanged<String>? onFieldSubmitted;
+  void Function(String?)? onSaved;
+  String? Function(String?)? validator;
+  List<TextInputFormatter>? inputFormatters;
+  bool? enabled;
+  double cursorWidth;
+  double? cursorHeight;
+  Radius? cursorRadius;
+  Color? cursorColor;
+  Brightness? keyboardAppearance;
+  EdgeInsets scrollPadding;
+  bool? enableInteractiveSelection;
+  TextSelectionControls? selectionControls;
+  InputCounterWidgetBuilder? buildCounter;
+  ScrollPhysics? scrollPhysics;
+  Iterable<String>? autofillHints;
+  AutovalidateMode? autovalidateMode;
+  ScrollController? scrollController;
+  String? restorationId;
+  bool enableIMEPersonalizedLearning;
+  MouseCursor? mouseCursor;
+  TestTextField({
+    this.key,
+    this.controller,
+    this.initialValue,
+    this.focusNode,
+    this.decoration = const InputDecoration(),
+    this.keyboardType,
+    this.textCapitalization = TextCapitalization.none,
+    this.textInputAction,
+    this.style,
+    this.strutStyle,
+    this.textDirection,
+    this.textAlign = TextAlign.start,
+    this.textAlignVertical,
+    this.autofocus = false,
+    this.readOnly = false,
+    this.toolbarOptions,
+    this.showCursor,
+    this.obscuringCharacter = '•',
+    this.obscureText = false,
+    this.autocorrect = true,
+    this.smartDashesType,
+    this.smartQuotesType,
+    this.enableSuggestions = true,
+    this.maxLengthEnforcement,
+    this.maxLines = 1,
+    this.minLines,
+    this.expands = false,
+    this.maxLength,
+    this.onChanged,
+    this.onTap,
+    this.onEditingComplete,
+    this.onFieldSubmitted,
+    this.onSaved,
+    this.validator,
+    this.inputFormatters,
+    this.enabled,
+    this.cursorWidth = 2.0,
+    this.cursorHeight,
+    this.cursorRadius,
+    this.cursorColor,
+    this.keyboardAppearance,
+    this.scrollPadding = const EdgeInsets.all(20.0),
+    this.enableInteractiveSelection,
+    this.selectionControls,
+    this.buildCounter,
+    this.scrollPhysics,
+    this.autofillHints,
+    this.autovalidateMode,
+    this.scrollController,
+    this.restorationId,
+    this.enableIMEPersonalizedLearning = true,
+    this.mouseCursor,
+  }) {
+    this.controller = controller ?? TextEditingController(text: initialValue);
+    this.focusNode = focusNode ?? FocusNode();
+  }
+  TestTextField.clear({
+    this.key,
+    this.type = TextFieldType.clear,
+    required this.controller,
+    this.initialValue,
+    required this.focusNode,
+    this.decoration = const InputDecoration(),
+    this.keyboardType,
+    this.textCapitalization = TextCapitalization.none,
+    this.textInputAction,
+    this.style,
+    this.strutStyle,
+    this.textDirection,
+    this.textAlign = TextAlign.start,
+    this.textAlignVertical,
+    this.autofocus = false,
+    this.readOnly = false,
+    this.toolbarOptions,
+    this.showCursor,
+    this.obscuringCharacter = '•',
+    this.obscureText = false,
+    this.autocorrect = true,
+    this.smartDashesType,
+    this.smartQuotesType,
+    this.enableSuggestions = true,
+    this.maxLengthEnforcement,
+    this.maxLines = 1,
+    this.minLines,
+    this.expands = false,
+    this.maxLength,
+    this.onChanged,
+    this.onTap,
+    this.onEditingComplete,
+    this.onFieldSubmitted,
+    this.onSaved,
+    this.validator,
+    this.inputFormatters,
+    this.enabled,
+    this.cursorWidth = 2.0,
+    this.cursorHeight,
+    this.cursorRadius,
+    this.cursorColor,
+    this.keyboardAppearance,
+    this.scrollPadding = const EdgeInsets.all(20.0),
+    this.enableInteractiveSelection,
+    this.selectionControls,
+    this.buildCounter,
+    this.scrollPhysics,
+    this.autofillHints,
+    this.autovalidateMode,
+    this.scrollController,
+    this.restorationId,
+    this.enableIMEPersonalizedLearning = true,
+    this.mouseCursor,
+  }) {
+    build();
+  }
+  TextFormField build() {
+    return TextFormField(
+      key: this.key,
+      controller: this.controller,
+      initialValue: this.initialValue,
+      decoration: this.decoration,
+      focusNode: this.focusNode,
+      keyboardType: this.keyboardType,
+      textCapitalization: this.textCapitalization,
+      textInputAction: this.textInputAction,
+      style: this.style,
+      strutStyle: this.strutStyle,
+      textDirection: this.textDirection,
+      textAlign: this.textAlign,
+      textAlignVertical: this.textAlignVertical,
+      autofocus: this.autofocus,
+      readOnly: this.readOnly,
+      toolbarOptions: this.toolbarOptions,
+      showCursor: this.showCursor,
+      obscuringCharacter: this.obscuringCharacter,
+      obscureText: this.obscureText,
+      autocorrect: this.autocorrect,
+      smartDashesType: this.smartDashesType,
+      smartQuotesType: this.smartQuotesType,
+      enableSuggestions: this.enableSuggestions,
+      maxLengthEnforcement: this.maxLengthEnforcement,
+      maxLines: this.maxLines,
+      minLines: this.minLines,
+      expands: this.expands,
+      maxLength: this.maxLength,
+      onChanged: this.onChanged,
+      onTap: this.onTap,
+      onEditingComplete: this.onEditingComplete,
+      onFieldSubmitted: this.onFieldSubmitted,
+      onSaved: this.onSaved,
+      validator: this.validator,
+      inputFormatters: this.inputFormatters,
+      enabled: this.enabled,
+      cursorWidth: this.cursorWidth,
+      cursorHeight: this.cursorHeight,
+      cursorRadius: this.cursorRadius,
+      cursorColor: this.cursorColor,
+      keyboardAppearance: this.keyboardAppearance,
+      scrollPadding: this.scrollPadding,
+      enableInteractiveSelection: this.enableInteractiveSelection,
+      selectionControls: this.selectionControls,
+      buildCounter: this.buildCounter,
+      scrollPhysics: this.scrollPhysics,
+      autofillHints: this.autofillHints,
+      autovalidateMode: this.autovalidateMode,
+      scrollController: this.scrollController,
+      restorationId: this.restorationId,
+      enableIMEPersonalizedLearning: this.enableIMEPersonalizedLearning,
+      mouseCursor: this.mouseCursor,
+    );
+  }
+}

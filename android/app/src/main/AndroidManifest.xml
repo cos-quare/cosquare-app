@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.costarica_app">
+    package="com.cosplay.square">
    <application
-        android:label="costarica_app"
+        android:label="코스퀘어"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

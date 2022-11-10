@@ -1,5 +1,5 @@
-import 'package:costarica_app/model/auth/request/sign_in_input.dart';
-import 'package:costarica_app/providers/auth/auth_state.dart';
+import 'package:cosquare_app/model/auth/request/sign_in_input.dart';
+import 'package:cosquare_app/providers/auth/auth_state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class AuthProvider extends StateNotifier<AuthState> {
