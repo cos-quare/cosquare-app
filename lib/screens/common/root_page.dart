@@ -1,8 +1,8 @@
 import 'dart:math';
 
-import 'package:costarica_app/providers/auth/auth_state.dart';
-import 'package:costarica_app/providers/proivders.dart';
-import 'package:costarica_app/theme/style/size_config.dart';
+import 'package:cosquare_app/providers/auth/auth_state.dart';
+import 'package:cosquare_app/providers/proivders.dart';
+import 'package:cosquare_app/theme/style/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

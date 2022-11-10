@@ -1,9 +1,9 @@
-import 'package:costarica_app/screens/home/album_page.dart';
-import 'package:costarica_app/screens/home/feed_page.dart';
-import 'package:costarica_app/screens/home/matching_page.dart';
-import 'package:costarica_app/screens/home/my_page.dart';
-import 'package:costarica_app/screens/home/setting_page.dart';
-import 'package:costarica_app/theme/style/colors.dart';
+import 'package:cosquare_app/screens/home/album_page.dart';
+import 'package:cosquare_app/screens/home/feed_page.dart';
+import 'package:cosquare_app/screens/home/matching_page.dart';
+import 'package:cosquare_app/screens/home/my_page.dart';
+import 'package:cosquare_app/screens/home/setting_page.dart';
+import 'package:cosquare_app/theme/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

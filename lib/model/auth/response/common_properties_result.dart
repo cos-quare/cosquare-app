@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:costarica_app/model/auth/field/properties.dart';
+import 'package:cosquare_app/model/auth/field/properties.dart';
 
 class CommonPropertiesResult {
   Properties? properties;

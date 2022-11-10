@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:costarica_app/model/auth/request/device_input.dart';
+import 'package:cosquare_app/model/auth/request/device_input.dart';
 
 class SignInInput {
   String email;

@@ -1,5 +1,5 @@
-import 'package:costarica_app/theme/style/text_style.dart';
-import 'package:costarica_app/theme/widgets/app_bar.dart';
+import 'package:cosquare_app/theme/style/text_style.dart';
+import 'package:cosquare_app/theme/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:costarica_app/enum/device_type.dart';
+import 'package:cosquare_app/enum/device_type.dart';
 
 class DeviceInput {
   //enum

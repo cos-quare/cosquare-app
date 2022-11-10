@@ -1,4 +1,4 @@
-import 'package:costarica_app/theme/style/colors.dart';
+import 'package:cosquare_app/theme/style/colors.dart';
 import 'package:flutter/material.dart';
 
 const TextStyle bold24 = TextStyle(

@@ -1,4 +1,4 @@
-import 'package:costarica_app/providers/proivders.dart';
+import 'package:cosquare_app/providers/proivders.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

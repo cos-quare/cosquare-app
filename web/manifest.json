@@ -1,6 +1,6 @@
 {
-    "name": "costarica_app",
-    "short_name": "costarica_app",
+    "name": "코스퀘어",
+    "short_name": "코스퀘어",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
