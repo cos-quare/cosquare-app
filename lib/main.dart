@@ -1,15 +1,8 @@
 import 'package:cosquare_app/providers/routes/routes.dart';
-import 'package:cosquare_app/screens/auth/email_authentication_page.dart';
-import 'package:cosquare_app/screens/auth/find_password_page.dart';
-import 'package:cosquare_app/screens/auth/login_page.dart';
-import 'package:cosquare_app/screens/auth/sign_up_page.dart';
-import 'package:cosquare_app/screens/auth/sign_up_complete_page.dart';
-import 'package:cosquare_app/screens/common/error_page.dart';
 import 'package:cosquare_app/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
 void main() async {
@@ -45,7 +38,7 @@ class App extends ConsumerWidget {
       routeInformationParser: router.routeInformationParser,
       routerDelegate: router.routerDelegate,
       routeInformationProvider: router.routeInformationProvider,
-      title: 'Costarica',
+      title: '코스퀘어',
       theme: kCosTheme,
     );
   }

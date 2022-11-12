@@ -15,7 +15,9 @@ ThemeData _buildCosTheme() {
     inputDecorationTheme: customTheme.buildInputDecorationTheme,
     checkboxTheme: customTheme.buildCosCheckBoxTheme,
     elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(minimumSize: MaterialStateProperty.all(Size(Size.infinite.width, 50))),
+      style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(kCosPurple500),
+          minimumSize: MaterialStateProperty.all<Size>(Size(52, 32))),
     ),
   );
 }
@@ -114,7 +116,7 @@ class CustomThemeData {
 
   ColorScheme get buildDarkColorScheme {
     return ThemeData.dark().colorScheme.copyWith(
-          background: Colors.black,
+          background: kCosGray900,
           primary: kCosPurple500,
           onPrimary: kCosGray025,
           secondary: kCosGray025,

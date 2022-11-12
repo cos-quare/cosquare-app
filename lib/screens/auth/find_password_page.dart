@@ -1,7 +1,8 @@
 import 'package:cosquare_app/screens/auth/email_authentication_page.dart';
 import 'package:cosquare_app/theme/style/text_style.dart';
-import 'package:cosquare_app/theme/widgets/app_bar.dart';
-import 'package:cosquare_app/theme/widgets/text_form_field.dart';
+import 'package:cosquare_app/components/app_bar.dart';
+import 'package:cosquare_app/components/text_form_field.dart';
+import 'package:cosquare_app/theme/widgets/elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -62,7 +63,7 @@ class _FindPasswordPageState extends ConsumerState<FindPasswordPage> {
               ElevatedButton(
                 child: Text('이메일 전송'),
                 onPressed: () => context.replace(EmailAuthenticationPage.routeLocation),
-              ),
+              ).h50(),
             ],
           ),
         ),
