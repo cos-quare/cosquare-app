@@ -3,6 +3,7 @@ import 'package:cosquare_app/theme/style/colors.dart';
 import 'package:cosquare_app/theme/style/text_style.dart';
 import 'package:cosquare_app/components/app_bar.dart';
 import 'package:cosquare_app/components/text_form_field.dart';
+import 'package:cosquare_app/theme/widgets/elevated_button.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
@@ -126,7 +127,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                 ElevatedButton(
                   onPressed: () => context.replace(SignUpCompletePage.routeLocation),
                   child: Text('회원가입'),
-                ),
+                ).h50(),
                 SizedBox(height: 10),
                 Text.rich(TextSpan(
                   text: '회원가입 시 Costarica 서비스 ',

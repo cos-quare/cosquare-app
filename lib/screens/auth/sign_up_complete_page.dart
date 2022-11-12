@@ -1,6 +1,7 @@
 import 'package:cosquare_app/screens/auth/login_page.dart';
 import 'package:cosquare_app/theme/style/text_style.dart';
 import 'package:cosquare_app/components/app_bar.dart';
+import 'package:cosquare_app/theme/widgets/elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -36,7 +37,7 @@ class _SignUpCompletePageState extends ConsumerState<SignUpCompletePage> {
                 child: const Text(
                   '시작하기',
                 ),
-              )
+              ).h50()
             ],
           ),
         )));

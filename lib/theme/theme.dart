@@ -15,7 +15,9 @@ ThemeData _buildCosTheme() {
     inputDecorationTheme: customTheme.buildInputDecorationTheme,
     checkboxTheme: customTheme.buildCosCheckBoxTheme,
     elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(minimumSize: MaterialStateProperty.all(Size(Size.infinite.width, 50))),
+      style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(kCosPurple500),
+          minimumSize: MaterialStateProperty.all<Size>(Size(52, 32))),
     ),
   );
 }

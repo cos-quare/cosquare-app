@@ -6,6 +6,7 @@ import 'package:cosquare_app/theme/style/colors.dart';
 import 'package:cosquare_app/theme/style/text_style.dart';
 import 'package:cosquare_app/theme/widgets/check_box.dart';
 import 'package:cosquare_app/components/text_form_field.dart';
+import 'package:cosquare_app/theme/widgets/elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -110,7 +111,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                   child: const Text(
                     '로그인',
                   ),
-                ),
+                ).h50(),
                 SizedBox(height: 12),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -168,7 +169,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xffE8CF3F),
                   ),
-                ),
+                ).h50(),
                 SizedBox(height: 12),
                 ElevatedButton(
                   onPressed: () => ref
@@ -193,7 +194,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xffE2E2E2),
                   ),
-                ),
+                ).h50(),
                 SizedBox(height: 28),
               ],
             ),
